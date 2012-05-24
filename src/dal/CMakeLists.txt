@@ -56,7 +56,8 @@ endif (DAL_SHARED_LIBRARY)
 
 set_target_properties (dal
   PROPERTIES
-  COMPILE_FLAGS "-fpermissive -ftemplate-depth-100"
+  COMPILE_FLAGS "-ftemplate-depth-100"
+  LINK_FLAGS "-fpermissive"
   )
 
 ## ==============================================================================
