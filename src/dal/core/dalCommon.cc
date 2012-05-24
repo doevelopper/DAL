@@ -470,7 +470,7 @@ namespace DAL {
     delete [] sdim;
     sdim = 0;
 
-    opdata = opdata;  // avoid compiler warnings of unused parameter
+    opdata = NULL;  // avoid compiler warnings of unused parameter
 
     if (H5T_INTEGER == H5Tget_class(atype)) {
       int point_out = 0;
