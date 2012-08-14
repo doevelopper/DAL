@@ -158,22 +158,22 @@ needs:
      In order to install into an existing standard directory structure -- such
      such as e.g. "/usr/local" -- use
 
-       -D DAL_INSTALL_PREFIX=<prefix>
+        -D DAL_INSTALL_PREFIX=<prefix>
 
   3. Installation as part of the LUS.
 
      In order to simplify installation of the DAL as part of the LOFAR User
      Software distribution, a preset has been defined which can be used through
 
-       -D LUS_INSTALL_PREFIX=<prefix>
+        -D LUS_INSTALL_PREFIX=<prefix>
 
      where <prefix>=$LOFARSOFT/release
 
 For further details and additional configuration options, consult the Doxygen-based
 documentation.
 
-_________________________________________________________________________________
->>> 6. Contributing changes
+
+## 6. Contributing changes ##
 
 Direct write access to the project's code respository is limited to a small core
 team, responsible for the guiding the development of the DAL. If you are in more
