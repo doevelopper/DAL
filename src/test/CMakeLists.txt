@@ -1,6 +1,3 @@
-## ------------------------------------------------------------------------------
-## $Id::                                                                        $
-## ------------------------------------------------------------------------------
 
 find_file (HAVE_RUNTEST_SH runTests.sh ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -18,9 +15,9 @@ if (HDF5_FOUND AND NOT HDF5_USE_16_API_DEFAULT)
   add_subdirectory (hdf5)
 endif (HDF5_FOUND AND NOT HDF5_USE_16_API_DEFAULT)
 
-if (DAL_PYTHON_BINDINGS)
+if (DAL_BINDINGS_PYTHON)
   add_subdirectory (python)
-endif (DAL_PYTHON_BINDINGS)
+endif (DAL_BINDINGS_PYTHON)
 
 ## Set up list of source files
 

@@ -162,17 +162,17 @@ endif (NOT DOCUMENTATION_ONLY)
 ## Basic tests for the required external libraries
 
 if (NOT BOOST_FOUND)
-  set (DAL_PYTHON_BINDINGS FALSE)
+  set (DAL_BINDINGS_PYTHON FALSE)
   message (STATUS "[DAL] Unable to generate Python bindings; missing Boost++!")
 endif (NOT BOOST_FOUND)
 
 if (NOT PYTHON_FOUND)
-  set (DAL_PYTHON_BINDINGS FALSE)
+  set (DAL_BINDINGS_PYTHON FALSE)
   message (STATUS "[DAL] Unable to generate Python bindings; missing Python!")
 endif (NOT PYTHON_FOUND)
 
 if (NOT NUMPY_FOUND)
-  set (DAL_PYTHON_BINDINGS FALSE)
+  set (DAL_BINDINGS_PYTHON FALSE)
   message (STATUS "[DAL] Unable to generate Python bindings; missing NumPy!")
 endif (NOT NUMPY_FOUND)
 

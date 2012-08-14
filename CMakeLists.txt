@@ -29,7 +29,7 @@ option (DAL_WITH_DOCUMENTATION "Generate documentation for the DAL?"         YES
 option (DAL_SHARED_LIBRARY     "Build DAL as shared library?"                NO  )
 option (DAL_ENABLE_TESTING     "Build and enable test programs?"             YES )
 option (DAL_COMPILER_WARNINGS  "Enable standard set of compiler warnings?"   YES )
-option (DAL_PYTHON_BINDINGS    "Create python bindings?"                     YES )
+option (DAL_BINDINGS_PYTHON    "Create python bindings?"                     YES )
 option (DAL_DEBUGGING_MESSAGES "Print debugging information?"                NO  )
 option (DAL_VERBOSE_CONFIGURE  "Verbose output during configuration?"        NO  )
 option (DAL_WITH_MYSQL         "Build with support for MySQL database?"      NO  )
@@ -329,7 +329,7 @@ message (STATUS " .. libmysqlclient               = ${MYSQL_MYSQLCLIENT_LIBRARY}
 message (STATUS " .. libmysqlservices             = ${MYSQL_MYSQLSERVICES_LIBRARY}" )
 endif (MYSQL_FOUND OR DAL_VERBOSE_CONFIGURE)
 
-message (STATUS " Enable Python bindings          = ${DAL_PYTHON_BINDINGS}"      )
+message (STATUS " Enable Python bindings          = ${DAL_BINDINGS_PYTHON}"      )
 message (STATUS " .. Python version               = ${PYTHON_VERSION}"           )
 message (STATUS " .. Python API version           = ${PYTHON_API_VERSION}"       )
 message (STATUS " .. Include directory            = ${PYTHON_INCLUDES}"          )

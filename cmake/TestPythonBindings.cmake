@@ -11,12 +11,12 @@
 ## programs and applications.
 
 if (NOT BOOST_FOUND)
-  set (DAL_PYTHON_BINDINGS FALSE)
+  set (DAL_BINDINGS_PYTHON FALSE)
   message (STATUS "[DAL] Unable to generate Python bindings; missing Boost++ headers!")
 endif (NOT BOOST_FOUND)
 
 if (NOT PYTHON_INCLUDES)
-  set (DAL_PYTHON_BINDINGS FALSE)
+  set (DAL_BINDINGS_PYTHON FALSE)
   message (STATUS "[DAL] Unable to generate Python bindings; missing Python headers!")
 endif (NOT PYTHON_INCLUDES)
 
@@ -26,7 +26,7 @@ endif (NOT PYTHON_INCLUDES)
 ##
 ## ==============================================================================
 
-if (DAL_PYTHON_BINDINGS)
+if (DAL_BINDINGS_PYTHON)
   
   file (WRITE ${PROJECT_BINARY_DIR}/CMakeTmp/CMakeLists.txt
     "project (TestForPythonBindings)
@@ -37,7 +37,7 @@ if (DAL_PYTHON_BINDINGS)
      TARGET_LINK_LIBRARIES(TestForPythonBindings ${PYTHON_LIBRARIES})"
     )
   
-  try_compile (DAL_PYTHON_BINDINGS
+  try_compile (DAL_BINDINGS_PYTHON
     ${PROJECT_BINARY_DIR}/CMakeTmp
     ${PROJECT_BINARY_DIR}/CMakeTmp
     TestForPythonBindings
@@ -45,12 +45,12 @@ if (DAL_PYTHON_BINDINGS)
   
   ## Enable include directories of test compile succeeded
   
-  if (DAL_PYTHON_BINDINGS AND PYTHON_INCLUDES)
+  if (DAL_BINDINGS_PYTHON AND PYTHON_INCLUDES)
     include_directories (${PYTHON_INCLUDES})
-  else (DAL_PYTHON_BINDINGS AND PYTHON_INCLUDES)
+  else (DAL_BINDINGS_PYTHON AND PYTHON_INCLUDES)
     message (STATUS "[DAL] Test compilation of Python bindings failed; disabling")
-    set (DAL_PYTHON_BINDINGS FALSE)
-  endif (DAL_PYTHON_BINDINGS AND PYTHON_INCLUDES)
+    set (DAL_BINDINGS_PYTHON FALSE)
+  endif (DAL_BINDINGS_PYTHON AND PYTHON_INCLUDES)
   
   ## We need to be a bit careful with the Boost and Python libraries; appending
   ## the Boost libraries only makes sense, if there is already a list of Python
@@ -73,5 +73,5 @@ if (DAL_PYTHON_BINDINGS)
     endif (PYTHON_LIBRARIES)
   endif (BOOST_LIBRARIES)
   
-endif (DAL_PYTHON_BINDINGS)
+endif (DAL_BINDINGS_PYTHON)
 

@@ -1,5 +1,5 @@
 
-if (DAL_PYTHON_BINDINGS)
+if (DAL_BINDINGS_PYTHON)
   add_subdirectory (python)
-endif (DAL_PYTHON_BINDINGS)
+endif (DAL_BINDINGS_PYTHON)
 

@@ -87,9 +87,9 @@ if (NOT BOOST_FOUND)
     system
     )
   
-  if (DAL_PYTHON_BINDINGS)
+  if (DAL_BINDINGS_PYTHON)
     list (APPEND BOOST_MODULES python)
-  endif(DAL_PYTHON_BINDINGS)
+  endif(DAL_BINDINGS_PYTHON)
   
   ##_____________________________________________________________________________
   ## Check for header files and libraries
