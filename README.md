@@ -82,16 +82,11 @@ packages and utilities:
 | [CMake](www.cmake.org)                          | >=2.8    | required                    |
 | [Doxygen](http://www.stack.nl/~dimitri/doxygen) | >=1.6    | optional, for documentation |
 | [HDF5 library](www.hdfgroup.org/HDF5)           | >=1.8.3  | required, for LOFAR data    |
-
-  * WCSLIB, >=4.2 (www.atnf.csiro.au/people/mcalabre/WCS)
-
-  * CFITSIO, >=3.0 (heasarc.gsfc.nasa.gov/fitsio)
-
-  * CASACORE (code.google.com/p/casacore)
-
-  * Boost C++ Libraries, >=1.40.0 (www.boost.org)
-
-  * Python, >= 2.6 (www.python.org)
+| [WCSLIB](www.atnf.csiro.au/people/mcalabre/WCS) | >=4.2    | optional, for casacore      |
+| [CFITSIO](heasarc.gsfc.nasa.gov/fitsio)         | >=3.0    | optional, for FITS support  |
+| [casacore](code.google.com/p/casacore)          |          | optional, for MS support    |
+| [Boost libraries](http://www.boost.org)         | >=1.40.0 | optional                    |
+| [Python](http://www.python.org)                 | >= 2.6   | optional, Python bindings   |
 
 
 ## 5. Configuration, build and installation ##
