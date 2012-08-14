@@ -77,11 +77,11 @@ The components of the DAL is organized into the following directory structure:
 To build the DAL from the sources you need a number of installed software
 packages and utilities:
 
-  * CMake, >=2.6 (www.cmake.org)
-
-  * Doxygen, >=1.6 (http://www.stack.nl/~dimitri/doxygen)
-
-  * HDF5 library, >=1.8.3 (www.hdfgroup.org/HDF5)
+| Package                                         | Version  | Status/Description          |
+|-------------------------------------------------|----------|-----------------------------|
+| [CMake](www.cmake.org)                          | >=2.8    | required                    |
+| [Doxygen](http://www.stack.nl/~dimitri/doxygen) | >=1.6    | optional, for documentation |
+| [HDF5 library](www.hdfgroup.org/HDF5)           | >=1.8.3  | required, for LOFAR data    |
 
   * WCSLIB, >=4.2 (www.atnf.csiro.au/people/mcalabre/WCS)
 
