@@ -4,13 +4,13 @@
 include_directories (
   ${DAL_BINARY_DIR}
   ${DAL_SOURCE_DIR}/src
-  ${DAL_SOURCE_DIR}/src/dal
+  ${DAL_SOURCE_DIR}/src/lib
   ${DAL_SOURCE_DIR}/src/apps
   )
 
 ## === Directories to build libraries ===========================================
 
-add_subdirectory (dal)
+add_subdirectory (lib)
 add_subdirectory (apps)
 
 if (DAL_PYTHON_BINDINGS)
