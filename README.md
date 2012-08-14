@@ -1,4 +1,6 @@
 
+# Data Access Library (DAL #
+
 CONTENTS:
 
   1. Introduction
@@ -9,8 +11,7 @@ CONTENTS:
   6. Contributing changes
   7. Further reading
 
-_________________________________________________________________________________
->>> 1. Introduction
+## 1. Introduction ##
 
 The size and complexity of astronomical data are growing at relentless rates.
 This increase is especially apparent in the radio community as evidenced by the 
@@ -29,51 +30,48 @@ is available to both the C/C++ developer and the Python user via the "pydal"
 module.
 
 
-_________________________________________________________________________________
->>> 2. Getting the source code
+## 2. Getting the source code ##
 
 As of Feb 15, 2001 the DAL can be cloned directly from the master repository
 hosted on Github (http://github.com):
      
-  git clone https://github.com/nextgen-astrodata/DAL.git DAL
+    git clone https://github.com/nextgen-astrodata/DAL.git DAL
 
 Once your checkout from the Git repository is complete, follow the
 instructions as described in the section "Configuration and build" below.
 
 
-_________________________________________________________________________________
->>> 3. Organization of the source code
+## 3. Organization of the source code ##
 
 The components of the DAL is organized into the following directory structure:
 
-  DAL
-  |-- build
-  |-- cmake
-  |-- data                     ..   Reference data sets used for rest programs.
-  |-- doc                      ..   Documentation.
-  |    `-- figures
-  `-- src
-        |-- apps               ..   Application programs build on top of the library.
-        |    `-- bf2h5
-        |-- dal
-        |    |-- core          ..   Core library classes
-        |    |    `-- test
-        |    |-- coordinates   ..   Representation of world coordinates
-        |    |    `-- test
-        |    |-- data_common   ..   Common functionality for datasets
-        |    |    `-- test
-        |    `-- data_hl       ..   High-level interfaces to datasets
-        |          `-- test
-        |-- pydal              ..   Bindings to the Python scripting language
-        |     `-- test
-        `-- test
-              |-- hdf5
-              |-- python
-              `-- swig
+    DAL
+    |-- build
+    |-- cmake
+    |-- data                     ..   Reference data sets used for rest programs.
+    |-- doc                      ..   Documentation.
+    |    `-- figures
+    `-- src
+          |-- apps               ..   Application programs build on top of the library.
+          |    `-- bf2h5
+          |-- lib
+          |    |-- core          ..   Core library classes
+          |    |    `-- test
+          |    |-- coordinates   ..   Representation of world coordinates
+          |    |    `-- test
+          |    |-- data_common   ..   Common functionality for datasets
+          |    |    `-- test
+          |    `-- data_hl       ..   High-level interfaces to datasets
+          |          `-- test
+          |-- pydal              ..   Bindings to the Python scripting language
+          |     `-- test
+          `-- test
+                |-- hdf5
+                |-- python
+                `-- swig
 
 
-_________________________________________________________________________________
->>> 4. External dependencies
+## 4. External dependencies ##
 
 To build the DAL from the sources you need a number of installed software
 packages and utilities:
@@ -94,8 +92,8 @@ packages and utilities:
 
   * Python, >= 2.6 (www.python.org)
 
-_________________________________________________________________________________
->>> 5. Configuration, build and installation
+
+## 5. Configuration, build and installation ##
 
 The DAL uses the CMake (www.cmake.org) Cross-Platform Makefile Generator for 
 configuration and control of the build.
@@ -104,27 +102,27 @@ Once your checkout from the Git repository is complete you will have a directory
 structure on disk as described in section "Organization of the source code"
 above.
 
-  cd DAL
-  mkdir build
-  cd build
-  cmake ..
-  make
+    cd DAL
+    mkdir build
+    cd build
+    cmake ..
+    make
 
 The default installation location is "/opt/dal"; if you want to change this,
 you can tell CMake so by using
 
-  cmake -D DAL_INSTALL_PREFIX=<installation prefix> ..
+    cmake -D DAL_INSTALL_PREFIX=<installation prefix> ..
 
 The CMake scripts will check a number of standard locations for the required
 3-party packages (such as Boost, HDF5, etc.), but if you are using a custom
 version installed at a non-standard location, you might need to aid CMake in
 finding all required components:
 
-  cmake -DHDF5_ROOT_DIR=<basedir of HDF5 install> ..
+    cmake -DHDF5_ROOT_DIR=<basedir of HDF5 install> ..
 
 In to install the DAL you will have to run
 
-  make install
+    make install
 
 from within the build directory. Depending on whether you are installing into a
 local directory or into a system-directory, appropriate permissions might be
@@ -133,18 +131,18 @@ required.
 In order to maintain compatibility with the Filesystem Hierarchy Standard (FHS)
 the following default installation layout has been defined:
 
-/opt
-└── dal                            CMAKE_INSTALL_PREFIX   = DAL_INSTALL_PREFIX
-    ├── bin                        DAL_INSTALL_BINDIR     = DAL_INSTALL_PREFIX/bin
-    ├── include                    DAL_INSTALL_INCLUDEDIR = DAL_INSTALL_PREFIX/include
-    │   ├── coordinates
-    │   ├── core
-    │   ├── data_common
-    │   └── data_hl
-    ├── lib                        DAL_INSTALL_LIBDIR     = DAL_INSTALL_PREFIX/lib
-    └── share
-        └── doc
-            └── html
+    /opt
+    └── dal                            CMAKE_INSTALL_PREFIX   = DAL_INSTALL_PREFIX
+        ├── bin                        DAL_INSTALL_BINDIR     = DAL_INSTALL_PREFIX/bin
+        ├── include                    DAL_INSTALL_INCLUDEDIR = DAL_INSTALL_PREFIX/include
+        │   ├── coordinates
+        │   ├── core
+        │   ├── data_common
+        │   └── data_hl
+        ├── lib                        DAL_INSTALL_LIBDIR     = DAL_INSTALL_PREFIX/lib
+        └── share
+            └── doc
+                └── html
 
 However the installation configuration can be tailored depending on your personal
 needs:
@@ -206,8 +204,8 @@ Suggested reading:
   - http://help.github.com/fork-a-repo (Forking a repository on Github)
   - http://help.github.com/send-pull-requests (sending pull requests on Github)
 
-_________________________________________________________________________________
->>> 7. Further reading
+
+## 7. Further reading ##
 
 Further detailed information regarding
 
@@ -218,17 +216,17 @@ Further detailed information regarding
 
 can be found in the HTML documentation generated using Doxygen:
 
-  cd build
-  cmake ..
-  make Documentation
+    cd build
+    cmake ..
+    make Documentation
 
 If you are having trouble with unresolved package dependencies, you can configure
 for generation of documentation only:
 
-  cmake -DDOCUMENTATION_ONLY=YES ..
-  make
+    cmake -DDOCUMENTATION_ONLY=YES ..
+    make
 
 Point your web-browser to
 
-  build/doc/html/index.html
+    build/doc/html/index.html
 
