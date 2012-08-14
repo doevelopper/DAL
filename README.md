@@ -1,7 +1,7 @@
 
-# Data Access Library (DAL #
+# Data Access Library (DAL) #
 
-CONTENTS:
+Contents:
 
   1. Introduction
   2. Getting the source code
@@ -63,8 +63,9 @@ The components of the DAL is organized into the following directory structure:
           |    |    `-- test
           |    `-- data_hl       ..   High-level interfaces to datasets
           |          `-- test
-          |-- pydal              ..   Bindings to the Python scripting language
-          |     `-- test
+          |-- bindings
+          |   `-- python         ..   Bindings to the Python scripting language
+          |       `-- test
           `-- test
                 |-- hdf5
                 |-- python
