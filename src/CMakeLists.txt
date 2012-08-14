@@ -12,10 +12,7 @@ include_directories (
 
 add_subdirectory (lib)
 add_subdirectory (apps)
-
-if (DAL_PYTHON_BINDINGS)
-  add_subdirectory (pydal)
-endif (DAL_PYTHON_BINDINGS)
+add_subdirectory (bindings)
 
 ## === Directories with test programs ===========================================
 
